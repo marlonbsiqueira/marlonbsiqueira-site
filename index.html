@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Marlon B. Siqueira — Finance Transformation Manager</title>
+<meta name="description" content="Marlon B. Siqueira — Finance Transformation Manager. SAP S/4HANA, intelligent automation and advanced analytics across multinational SSC/GBS environments. 12+ years international experience. Lean Six Sigma Black Belt." />
+<meta name="author" content="Marlon B. Siqueira" />
+<meta name="theme-color" content="#06112B" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Marlon B. Siqueira — Finance Transformation Manager" />
+<meta property="og:description" content="SAP S/4HANA · Intelligent Automation · Advanced Analytics · SSC/GBS. 12+ years international experience." />
+<meta property="og:image" content="assets/img/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/png" href="assets/img/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ===== ambient layers ===== -->
+<div class="sky" aria-hidden="true"></div>
+<canvas id="fxCircuit" aria-hidden="true"></canvas>
+<canvas id="fxMatrix" aria-hidden="true"></canvas>
+
+<!-- ============ THE ZOOM CANVAS ============ -->
+<div class="viewport">
+  <div class="world" id="world">
+
+    <!-- depth glyphs -->
+    <div class="ghost gold" style="left:5500px;top:1280px;font-size:700px;transform:rotate(-6deg)">12+</div>
+    <div class="ghost" style="left:8050px;top:2720px;font-size:360px;transform:rotate(-8deg)">REACH</div>
+    <div class="ghost" style="left:6250px;top:4520px;font-size:320px;transform:rotate(6deg)">EUROPE</div>
+    <div class="ghost" style="left:1750px;top:3760px;font-size:330px;transform:rotate(-7deg)">LEAN</div>
+    <div class="ghost fill" style="left:3500px;top:1040px;font-size:300px;transform:rotate(2deg)">SAP S/4HANA</div>
+    <div class="ghost fill" style="left:3900px;top:5060px;font-size:300px;transform:rotate(-1deg)">TRANSFORMATION</div>
+    <div class="ghost fill" style="left:6700px;top:780px;font-size:300px;transform:rotate(5deg)">IMPACT</div>
+
+    <!-- connecting path -->
+    <svg class="path-svg" id="pathSvg" aria-hidden="true"><polyline class="path-line" id="pathLine" points=""></polyline></svg>
+
+    <!-- ===== STOP 0 — HERO ===== -->
+    <section class="stop" id="s-hero" data-x="4100" data-y="2700" data-rot="0" data-screen-label="Hero" aria-label="Introduction">
+      <div class="hero">
+        <div>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Finance Transformation Manager · SAP S/4HANA · Automation · Analytics</p>
+          <h1 class="display"><span data-i18n="hero.headline">I lead finance transformation <span class="text-gold">across borders</span>, at scale, with measurable impact.</span></h1>
+          <p class="value lede" data-i18n="hero.value">12+ years across Portugal, Ireland and Brazil — translating enterprise-wide complexity into governed, scalable solutions.</p>
+          <div class="chips">
+            <span class="chip"><span class="d"></span><span data-i18n="hero.chip.loc">Porto, Portugal</span></span>
+            <span class="chip"><span class="d"></span><span data-i18n="hero.chip.eu">EU Citizen · Brazilian &amp; Italian</span></span>
+            <span class="chip live"><span class="d"></span><span data-i18n="hero.chip.open">Open to international relocation</span></span>
+          </div>
+          <div class="hint">
+            <span class="pulse"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span data-i18n="hero.hint">Use the path, arrows or swipe to fly through</span>
+          </div>
+        </div>
+
+        <!-- PORTRAIT — drop your photo at assets/img/profile.jpg -->
+        <div class="portrait">
+          <div class="ring">
+            <div class="frame">
+              <div class="img-ph" aria-hidden="true">
+                <span class="pin"><svg class="ico ico-lg" viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 1114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+                <code>assets/img/profile.jpg</code>
+                <span data-i18n="ph.photo">Drop your portrait here · square, ≥800px</span>
+              </div>
+              <img src="assets/img/profile.jpg" alt="Marlon B. Siqueira"
+                   onerror="this.style.display='none'" onload="this.previousElementSibling.style.display='none'" />
+            </div>
+          </div>
+          <div class="badge"><b data-i18n="hero.badge.years">12+ yrs</b><small data-i18n="hero.badge.label">International</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STOP 1 — IMPACT (matrix rain behind) ===== -->
+    <section class="stop" id="s-impact" data-x="6500" data-y="1750" data-rot="-5" data-screen-label="Impact" aria-label="Impact at scale">
+      <p class="eyebrow center" data-i18n="impact.eyebrow">Impact at Scale</p>
+      <div class="figures">
+        <div class="figure"><b>€<span data-count="200">200</span><span class="u">K+</span></b><div class="ln"></div><div class="lab" data-i18n="metric.savings.l">Productivity savings</div></div>
+        <div class="figure"><b>~<span data-count="9">9</span><span class="u">FTE</span></b><div class="ln"></div><div class="lab" data-i18n="metric.fte.l">Direct efficiency contribution</div></div>
+        <div class="figure"><b><span data-count="15">15</span><span class="u">+</span></b><div class="ln"></div><div class="lab" data-i18n="metric.entities.l">EU entities transformed</div></div>
+        <div class="figure"><b><span data-count="20">20</span><span class="u">+</span></b><div class="ln"></div><div class="lab" data-i18n="metric.solutions.l">Automation solutions delivered</div></div>
+      </div>
+      <p class="note" data-i18n="impact.note">Cumulative outcomes delivered across multinational SSC/GBS programmes.</p>
+    </section>
+
+    <!-- ===== STOP 2 — REACH (globe) ===== -->
+    <section class="stop" id="s-reach" data-x="6900" data-y="3650" data-rot="4" data-screen-label="Reach" aria-label="Global reach">
+      <div class="reach">
+        <div>
+          <p class="eyebrow" data-i18n="globe.eyebrow">International Profile</p>
+          <h2 class="title" data-i18n="globe.title">A career built across borders.</h2>
+          <p class="lede" data-i18n="globe.lede">From Belo Horizonte to Dublin to Porto — delivering finance transformation, tax advisory and intelligent automation across fifteen-plus European entities.</p>
+          <div class="legend">
+            <span><span class="mk mk-red"></span><span data-i18n="globe.legend.worked">Lived &amp; worked</span></span>
+            <span><span class="mk mk-green"></span><span data-i18n="globe.legend.visited">Visited</span></span>
+          </div>
+          <div class="rstats">
+            <div class="rstat"><b><span data-count="4">4</span></b><small data-i18n="globe.stat.worked">Countries worked</small></div>
+            <div class="rstat"><b><span data-count="15">15</span>+</b><small data-i18n="globe.stat.entities">EU entities served</small></div>
+            <div class="rstat"><b><span data-count="30">30</span>+</b><small data-i18n="globe.stat.jurisdictions">EU tax jurisdictions</small></div>
+          </div>
+        </div>
+        <div class="globe-stage"><div id="globeViz"></div></div>
+      </div>
+    </section>
+
+    <!-- ===== STOP 3 — EXPERIENCE (logo upload slots) ===== -->
+    <section class="stop" id="s-exp" data-x="4950" data-y="4550" data-rot="-2" data-screen-label="Experience" aria-label="Professional experience">
+      <div class="exp-head">
+        <div>
+          <p class="eyebrow" data-i18n="exp.eyebrow">Professional Experience</p>
+          <h2 class="title" data-i18n="exp.title">A track record across industries and continents.</h2>
+        </div>
+        <p class="lede" data-i18n="exp.subtitle">From SSC/GBS transformation to strategic FP&amp;A and EU tax advisory.</p>
+      </div>
+      <div class="roles">
+        <div class="role now">
+          <div class="logo-slot" data-logo="stellantis"><img src="assets/img/logos/stellantis.png" alt="Stellantis" onerror="this.remove()" /><span class="lg-ph">STELLANTIS</span></div>
+          <div>
+            <div class="co">Stellantis<span class="now-dot"></span></div>
+            <div class="rl" data-i18n="exp.stellantis.role">Senior Finance &amp; Digital Transformation Specialist</div>
+            <div class="mt"><span data-i18n="exp.stellantis.meta">Shared Services Centre of Excellence · Porto</span> · 2020 — •</div>
+            <p data-i18n="exp.stellantis.b1">Led SAP S/4HANA finance transformation (R2R, P2P, OTC) across 15+ European entities.</p>
+          </div>
+        </div>
+        <div class="role">
+          <div class="logo-slot" data-logo="fyi"><img src="assets/img/logos/fyi.png" alt="FYI Digital Innovation" onerror="this.remove()" /><span class="lg-ph">FYI</span></div>
+          <div>
+            <div class="co">FYI Digital Innovation</div>
+            <div class="rl" data-i18n="exp.fyi.role">Finance Manager</div>
+            <div class="mt"><span data-i18n="exp.fyi.meta">FYI Digital Innovation · Porto</span> · 2019 — 2020</div>
+            <p data-i18n="exp.fyi.b1">Built AP/AR, cash-flow forecasting and a control framework from scratch — DSO down 20%.</p>
+          </div>
+        </div>
+        <div class="role">
+          <div class="logo-slot" data-logo="renova"><img src="assets/img/logos/renova.png" alt="Fundação Renova" onerror="this.remove()" /><span class="lg-ph">RENOVA</span></div>
+          <div>
+            <div class="co">Fundação Renova</div>
+            <div class="rl" data-i18n="exp.renova.role">Financial Analyst</div>
+            <div class="mt"><span data-i18n="exp.renova.meta">Fundação Renova · Belo Horizonte</span> · 2018 — 2019</div>
+            <p data-i18n="exp.renova.b1">Managed budgeting and variance analysis across an R$11B+ portfolio, 40+ cost centres.</p>
+          </div>
+        </div>
+        <div class="role">
+          <div class="logo-slot" data-logo="meridian"><img src="assets/img/logos/meridian.png" alt="Meridian Global Services" onerror="this.remove()" /><span class="lg-ph">MERIDIAN</span></div>
+          <div>
+            <div class="co">Meridian Global Services</div>
+            <div class="rl" data-i18n="exp.meridian.role">VAT Analyst</div>
+            <div class="mt"><span data-i18n="exp.meridian.meta">Meridian Global Services · Dublin</span> · 2017 — 2018</div>
+            <p data-i18n="exp.meridian.b1">VAT compliance &amp; reclaim across 30+ EU jurisdictions — 100% audit success.</p>
+          </div>
+        </div>
+        <div class="role">
+          <div class="logo-slot" data-logo="ale"><img src="assets/img/logos/ale.png" alt="ALE Combustíveis" onerror="this.remove()" /><span class="lg-ph">ALE</span></div>
+          <div>
+            <div class="co">ALE Combustíveis</div>
+            <div class="rl" data-i18n="exp.ale.role">Senior Cost &amp; Budget Analyst</div>
+            <div class="mt"><span data-i18n="exp.ale.meta">ALE Combustíveis · Belo Horizonte</span> · 2014 — 2016</div>
+            <p data-i18n="exp.ale.b1">Built cost models across 40+ fuel distribution bases on multi-billion-litre volumes.</p>
+          </div>
+        </div>
+        <div class="role">
+          <div class="logo-slot" data-logo="vale"><img src="assets/img/logos/vale.png" alt="Vale S.A." onerror="this.remove()" /><span class="lg-ph">VALE</span></div>
+          <div>
+            <div class="co">Vale S.A.</div>
+            <div class="rl" data-i18n="exp.vale.role">Continuous Improvement Intern</div>
+            <div class="mt"><span data-i18n="exp.vale.meta">Vale S.A. · Minas Gerais</span> · 2012 — 2013</div>
+            <p data-i18n="exp.vale.b1">Applied Lean Six Sigma, Kaizen, 5S and PDCA across iron-ore extraction sites.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STOP 4 — EDUCATION (floating academic icons) ===== -->
+    <section class="stop" id="s-edu" data-x="2750" data-y="4250" data-rot="3" data-screen-label="Education" aria-label="Education">
+      <div class="edu-fx" aria-hidden="true">
+        <span class="efx" style="left:4%;top:14%;animation-delay:0s"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1 3 3 6 3s6-2 6-3v-5"/><path d="M22 9v5"/></svg></span>
+        <span class="efx" style="left:86%;top:20%;animation-delay:-3s"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 012-2h12v16H6a2 2 0 00-2 2z"/><path d="M18 19v2"/></svg></span>
+        <span class="efx" style="left:10%;top:74%;animation-delay:-6s"><svg viewBox="0 0 24 24"><path d="M12 3l8 4-8 4-8-4z"/><path d="M12 11v8"/><circle cx="12" cy="20" r="1.4"/></svg></span>
+        <span class="efx" style="left:90%;top:72%;animation-delay:-2s"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span>
+        <span class="efx" style="left:50%;top:8%;animation-delay:-4.5s"><svg viewBox="0 0 24 24"><path d="M9 18V6l8 6z"/></svg></span>
+        <span class="efx" style="left:72%;top:50%;animation-delay:-1.5s"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M9 13l-1 8 4-2 4 2-1-8"/></svg></span>
+        <span class="efx" style="left:26%;top:46%;animation-delay:-5.5s"><svg viewBox="0 0 24 24"><path d="M4 19V5a1 1 0 011-1h14v16H5a1 1 0 01-1-1z"/><path d="M9 4v16"/></svg></span>
+      </div>
+      <p class="eyebrow" data-i18n="edu.eyebrow">Education &amp; Certifications</p>
+      <h2 class="title" data-i18n="edu.title">Academic foundation, certified depth.</h2>
+      <div class="edu-grid">
+        <div class="degrees">
+          <div class="degree">
+            <div class="yr" data-i18n="edu.pg.yr">2019 – 2020</div>
+            <div>
+              <h3 data-i18n="edu.pg.deg">Postgraduate Diploma — Finance &amp; Taxation</h3>
+              <p data-i18n="edu.pg.inst">Porto Business School, Portugal</p>
+            </div>
+          </div>
+          <div class="degree">
+            <div class="yr" data-i18n="edu.bsc.yr">2009 – 2013</div>
+            <div>
+              <h3 data-i18n="edu.bsc.deg">BSc Business Administration</h3>
+              <p data-i18n="edu.bsc.inst">Faculdade Arnaldo, Brazil</p>
+            </div>
+          </div>
+          <div class="mensa">
+            <div class="seal"><span data-i18n="edu.mensa.seal">TOP 2%</span></div>
+            <div>
+              <h4 data-i18n="edu.mensa.h">Mensa Brasil Member</h4>
+              <p data-i18n="edu.mensa.p">Admitted in 2014 at the 98th percentile or above — member MB 1129 of the world's largest high-IQ society.</p>
+            </div>
+          </div>
+        </div>
+        <div class="certs">
+          <div class="lab" data-i18n="edu.cert.label">Certifications</div>
+          <div class="cert-list">
+            <span class="cert key">Lean Six Sigma Black Belt</span>
+            <span class="cert">Lean Six Sigma Green Belt</span>
+            <span class="cert key">SAP S/4HANA · R2R · P2P · OTC</span>
+            <span class="cert">Automation Anywhere Academy</span>
+            <span class="cert">Blue Prism Academy</span>
+            <span class="cert">Power BI &amp; Advanced DAX</span>
+            <span class="cert">VBA Programming</span>
+            <span class="cert">Finance &amp; Quantitative Modeling</span>
+            <span class="cert">Artificial Intelligence for Business</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STOP 5 — KNOWLEDGE (animated flowchart) ===== -->
+    <section class="stop" id="s-skills" data-x="1500" data-y="2700" data-rot="-3" data-screen-label="Knowledge" aria-label="Knowledge & capabilities">
+      <p class="eyebrow" data-i18n="sk.eyebrow">Knowledge &amp; Capabilities</p>
+      <h2 class="title" data-i18n="sk.title">The technical foundation behind the transformation.</h2>
+      <div id="flowChart" class="flow-wrap"></div>
+      <div class="sk-grid">
+        <div class="cap">
+          <div class="lab" data-i18n="sk.cap.auto">Automation &amp; Analytics</div>
+          <div class="cloud">
+            <span class="tagx s">RPA · Automation Anywhere</span><span class="tagx">Blue Prism</span>
+            <span class="tagx">Power Platform</span><span class="tagx s">Power BI &amp; DAX</span>
+            <span class="tagx">VBA (Expert)</span><span class="tagx">Python</span><span class="tagx">SQL</span>
+          </div>
+        </div>
+        <div class="cap">
+          <div class="lab" data-i18n="sk.cap.method">Continuous Improvement</div>
+          <div class="cloud">
+            <span class="tagx s">Lean Six Sigma · Black Belt</span><span class="tagx">DMAIC</span>
+            <span class="tagx">Value Stream Mapping</span><span class="tagx">Kaizen · 5S · PDCA</span>
+            <span class="tagx">Pareto · Ishikawa</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STOP 6 — CONTACT ===== -->
+    <section class="stop" id="s-contact" data-x="2500" data-y="1500" data-rot="2" data-screen-label="Contact" aria-label="Contact">
+      <p class="eyebrow center" data-i18n="ct.eyebrow">Let's Connect</p>
+      <h2 class="display signoff"><span data-i18n="ct.signoff">Let's discuss your next <span class="text-gold">transformation.</span></span></h2>
+      <p class="lede" data-i18n="ct.lede">Always open to meaningful professional conversations — finance transformation, automation, analytics or knowledge sharing.</p>
+      <div class="clinks">
+        <a class="clink" href="mailto:marlonbcsiqueira@gmail.com">
+          <span class="ic"><svg class="ico ico-lg" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <span><span class="lab" data-i18n="ct.email.l">Email</span><br /><span class="val">marlonbcsiqueira@gmail.com</span></span>
+        </a>
+        <a class="clink" href="https://www.linkedin.com/in/marlonbsiqueira/" target="_blank" rel="noopener">
+          <span class="ic"><svg class="ico ico-lg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4M11 17v-7" stroke-linecap="round"/></svg></span>
+          <span><span class="lab" data-i18n="ct.linkedin.l">LinkedIn</span><br /><span class="val">in/marlonbsiqueira</span></span>
+        </a>
+        <a class="clink" href="https://marlonbsiqueira.github.io/marlonbsiqueira" target="_blank" rel="noopener">
+          <span class="ic"><svg class="ico ico-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg></span>
+          <span><span class="lab" data-i18n="ct.site.l">Portfolio</span><br /><span class="val">marlonbsiqueira.github.io</span></span>
+        </a>
+        <a class="clink" href="tel:+351938567334">
+          <span class="ic"><svg class="ico ico-lg" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span>
+          <span><span class="lab" data-i18n="ct.phone.l">Phone</span><br /><span class="val">+351 938 567 334</span></span>
+        </a>
+      </div>
+      <p class="foot" data-i18n="ct.foot">Lean Six Sigma Black Belt · Full EU Work Authorisation · Open to international relocation</p>
+    </section>
+
+  </div>
+</div>
+
+<div class="vignette" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ PATH RAIL ============ -->
+<nav class="rail" id="rail" aria-label="Sections"></nav>
+
+<!-- ============ CENTERED TECH CONSOLE ============ -->
+<nav class="console" aria-label="Navigation">
+  <button class="cbtn" id="btnBack" aria-label="Back" disabled>
+    <svg class="ico" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+  </button>
+
+  <div class="readout">
+    <div class="ro-top">
+      <span class="ro-idx" id="curIndex">01</span>
+      <span class="ro-sep">/</span>
+      <span class="ro-total">07</span>
+      <span class="ro-name" id="curName" data-i18n="dot.1">Intro</span>
+    </div>
+    <div class="ro-track"><div class="ro-fill" id="roFill"></div></div>
+  </div>
+
+  <button class="cbtn cbtn-next" id="btnNext" aria-label="Next">
+    <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </button>
+
+  <span class="console-div" aria-hidden="true"></span>
+
+  <div class="lang" role="group" aria-label="Language">
+    <button data-lang="en" class="active" aria-pressed="true">EN</button>
+    <button data-lang="pt" aria-pressed="false">PT</button>
+  </div>
+</nav>
+
+<!-- ============ LIBRARIES ============ -->
+<script src="https://unpkg.com/globe.gl@2.32.0/dist/globe.gl.min.js"></script>
+<!-- ============ APP ============ -->
+<script src="js/fx.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
