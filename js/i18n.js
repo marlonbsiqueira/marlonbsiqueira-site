@@ -275,7 +275,10 @@ const I18nController = (() => {
   let current = "en";
 
   function detect(){
-    const saved = localStorage.getItem("mbs-lang");
+    const fromUrl = new URLSearchParams(location.search).get("lang");
+    if (fromUrl === "en" || fromUrl === "pt") return fromUrl;
+    let saved = null;
+    try { saved = localStorage.getItem("mbs-lang"); } catch (e) {} // blocked in some private modes
     if (saved === "en" || saved === "pt") return saved;
     const nav = (navigator.language || "en").toLowerCase();
     return nav.startsWith("pt") ? "pt" : "en";
@@ -319,7 +322,7 @@ const I18nController = (() => {
     } else {
       swap();
     }
-    localStorage.setItem("mbs-lang", lang);
+    try { localStorage.setItem("mbs-lang", lang); } catch (e) {}
   }
 
   function init(){
