@@ -144,6 +144,10 @@
       applyCam(camFor(i), instant);
     }
 
+    // only the chapter in view is reachable by keyboard / screen readers;
+    // the others sit off-camera and Tab used to land on invisible links
+    stops.forEach((s, k) => { s.el.inert = k !== i; });
+
     updateChrome();
     onEnter(i);
     triggerEnterAnim(i, from, instant);
@@ -334,6 +338,7 @@
     layout();
     if(window.I18nController) I18nController.init();
     updateChrome();
+    stops.forEach((s, k) => { s.el.inert = k !== 0; });
     if(reduce()){ applyCam(camFor(0), true); }
     else{
       applyCam(overviewCam(), true);
