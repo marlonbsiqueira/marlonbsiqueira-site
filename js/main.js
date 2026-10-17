@@ -50,23 +50,33 @@
   }
 
   /* ---------- camera ---------- */
+  // The visible stage: between the top-left brand and the bottom console.
+  // Framing against the full window let the console cover the end of tall
+  // chapters on phones (e.g. the last role in Experience).
+  function stage(){
+    const brand = document.querySelector(".brand");
+    const con = document.querySelector(".console");
+    const top = brand ? Math.max(0, brand.getBoundingClientRect().bottom) : 0;
+    const bottom = con ? con.getBoundingClientRect().top : innerHeight;
+    return bottom - top > innerHeight * 0.5 ? { top, h: bottom - top } : { top: 0, h: innerHeight };
+  }
   function camFor(i){
     const s = stops[i];
     const w = s.el.offsetWidth, h = s.el.offsetHeight;
-    const vw = innerWidth, vh = innerHeight;
+    const vw = innerWidth, st = stage();
     const padX = vw < 760 ? 0.96 : 0.84;
-    const padY = vw < 760 ? 0.92 : 0.82;
-    let k = Math.min(vw * padX / w, vh * padY / h);
+    const padY = vw < 760 ? 0.96 : 0.86;
+    let k = Math.min(vw * padX / w, st.h * padY / h);
     k = Math.min(k, 1.12);
-    return { k, x: s.x, y: s.y, rot: s.rot };
+    return { k, x: s.x, y: s.y, rot: s.rot, cy: st.top + st.h / 2 };
   }
 
   function applyCam(c, instant){
     if (instant || reduce()) world.classList.add("instant");
     else world.classList.remove("instant");
-    const vw = innerWidth, vh = innerHeight;
+    const vw = innerWidth, cy = c.cy != null ? c.cy : innerHeight / 2;
     world.style.transform =
-      `translate(${vw/2}px,${vh/2}px) scale(${c.k}) rotate(${-c.rot}deg) translate(${-c.x}px,${-c.y}px)`;
+      `translate(${vw/2}px,${cy}px) scale(${c.k}) rotate(${-c.rot}deg) translate(${-c.x}px,${-c.y}px)`;
     if (instant || reduce()){ void world.offsetWidth; world.classList.remove("instant"); }
   }
 
@@ -133,6 +143,10 @@
     } else {
       applyCam(camFor(i), instant);
     }
+
+    // only the chapter in view is reachable by keyboard / screen readers;
+    // the others sit off-camera and Tab used to land on invisible links
+    stops.forEach((s, k) => { s.el.inert = k !== i; });
 
     updateChrome();
     onEnter(i);
@@ -324,6 +338,7 @@
     layout();
     if(window.I18nController) I18nController.init();
     updateChrome();
+    stops.forEach((s, k) => { s.el.inert = k !== 0; });
     if(reduce()){ applyCam(camFor(0), true); }
     else{
       applyCam(overviewCam(), true);
