@@ -219,7 +219,8 @@
       if(!el||typeof window.Globe==="undefined")return;
       built=true;
 
-      fetch("https://raw.githubusercontent.com/vasturiano/globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson")
+      // country shapes served locally (was fetched from an unpinned GitHub master URL)
+      fetch("assets/data/countries-110m.geojson")
         .then(r=>r.json())
         .then(gj=>{
           world3=Globe()(el)
