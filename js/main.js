@@ -226,8 +226,8 @@
           world3=Globe()(el)
             .backgroundColor("rgba(0,0,0,0)")
             .showAtmosphere(true).atmosphereColor("#7BA0D4").atmosphereAltitude(0.22)
-            .globeImageUrl("https://unpkg.com/three-globe@2.31.0/example/img/earth-blue-marble.jpg")
-            .bumpImageUrl("https://unpkg.com/three-globe@2.31.0/example/img/earth-topology.png")
+            .globeImageUrl("assets/img/earth-blue-marble.jpg")   // NASA Blue Marble, self-hosted
+            .bumpImageUrl("assets/img/earth-topology.jpg")
             // country polygon fills — no pins, no rings
             .polygonsData(gj.features)
             .polygonAltitude(d=>{
