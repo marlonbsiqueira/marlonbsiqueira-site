@@ -260,6 +260,11 @@ button{font-family:inherit;color:inherit;background:none;border:none;cursor:poin
 .clink:hover .ic{border-color:rgba(201,162,75,.45);background:rgba(201,162,75,.14)}
 .clink .lab{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
 .clink .val{font-size:21px;color:var(--ink);font-weight:500;text-align:left}
+.csocial{display:flex;gap:16px;justify-content:center;margin:-24px 0 56px}
+.csocial .ic{
+  width:54px;height:54px;border-radius:14px;border:1px solid rgba(255,255,255,.10);
+  display:grid;place-items:center;color:var(--gold);background:rgba(201,162,75,.08);
+}
 .foot{font-size:18px;color:var(--faint);letter-spacing:.04em}
 
 /* ===== CHROME ===== */
